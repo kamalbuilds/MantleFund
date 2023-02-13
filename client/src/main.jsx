@@ -6,7 +6,7 @@ import { ChainId, ThirdwebProvider } from '@thirdweb-dev/react';
 import { StateContextProvider } from './context';
 import App from './App';
 import './index.css';
-
+const arcana_app_address ="9fd9920a68eaf5f65f8011a1f84ed14a3f121d2c";
 
 // wagmi 
 
@@ -20,6 +20,11 @@ import { InjectedConnector } from 'wagmi/connectors/injected'
 import { MetaMaskConnector } from 'wagmi/connectors/metaMask'
 import { WalletConnectConnector } from 'wagmi/connectors/walletConnect'
  
+
+import { ArcanaConnector } from "@arcana/auth-wagmi";
+
+
+
 // Configure chains & providers with the Alchemy provider.
 // Two popular providers are Alchemy (alchemy.com) and Infura (infura.io)
 const { chains, provider, webSocketProvider } = configureChains(
@@ -49,6 +54,15 @@ const client = createClient({
       options: {
         name: 'Injected',
         shimDisconnect: true,
+      },
+    }),
+    new ArcanaConnector({
+      chains: [mainnet],
+      options: {
+        appId: `${arcana_app_address}`,// appId = App Address
+        theme: 'dark',            // Defaults to 'dark'
+        alwaysVisible: false,      // Defaults to true
+        position: 'left'           // Defaults to 'right'
       },
     }),
   ],

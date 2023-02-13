@@ -10,6 +10,23 @@
     "@jridgewell/gen-mapping" "^0.1.0"
     "@jridgewell/trace-mapping" "^0.3.9"
 
+"@arcana/auth-wagmi@^0.0.2":
+  "integrity" "sha512-Jh1+kjB278pEEEcgkPOMES77O+Lt9HDiWEOGtho7zhKBKg1WvOwmWLdQNuJggfMO0PE0Wi/nn9jp8lu/6E+1Kw=="
+  "resolved" "https://registry.npmjs.org/@arcana/auth-wagmi/-/auth-wagmi-0.0.2.tgz"
+  "version" "0.0.2"
+  dependencies:
+    "@arcana/auth" "^1.0.0"
+    "@wagmi/core" "0.9.5"
+
+"@arcana/auth@^1.0.0":
+  "integrity" "sha512-T+JT1+mTrhOErWgiKO6f/nRtffcZsRdDNCPKDM48iOqlI6gW2065G2tdP87/q2LeGYC/d2Tym3DmQcbJMr6Thw=="
+  "resolved" "https://registry.npmjs.org/@arcana/auth/-/auth-1.0.1.tgz"
+  "version" "1.0.1"
+  dependencies:
+    "@metamask/safe-event-emitter" "^2.0.0"
+    "eth-rpc-errors" "^4.0.3"
+    "penpal" "^6.0.1"
+
 "@babel/code-frame@^7.0.0", "@babel/code-frame@^7.18.6":
   "integrity" "sha512-TDCmlK5eOvH+eH7cdAFlNXeVJqWIQ7gW9tY1GJIpUtFb6CmjVyq2VM3u71bOyR8CRihcCgMUYoDNyLXao3+70Q=="
   "resolved" "https://registry.npmjs.org/@babel/code-frame/-/code-frame-7.18.6.tgz"
@@ -5072,6 +5089,13 @@
   dependencies:
     "fast-safe-stringify" "^2.0.6"
 
+"eth-rpc-errors@^4.0.3":
+  "integrity" "sha512-Z3ymjopaoft7JDoxZcEb3pwdGh7yiYMhOwm2doUt6ASXlMavpNlK6Cre0+IMl2VSGyEU9rkiperQhp5iRxn5Pg=="
+  "resolved" "https://registry.npmjs.org/eth-rpc-errors/-/eth-rpc-errors-4.0.3.tgz"
+  "version" "4.0.3"
+  dependencies:
+    "fast-safe-stringify" "^2.0.6"
+
 "eth-sig-util@^1.4.2":
   "integrity" "sha512-iNZ576iTOGcfllftB73cPB5AN+XUQAT/T8xzsILsghXC1o8gJUqe3RHlcDqagu+biFpYQ61KQrZZJza8eRSYqw=="
   "resolved" "https://registry.npmjs.org/eth-sig-util/-/eth-sig-util-1.4.2.tgz"
@@ -7581,6 +7605,11 @@
     "ripemd160" "^2.0.1"
     "safe-buffer" "^5.0.1"
     "sha.js" "^2.4.8"
+
+"penpal@^6.0.1":
+  "integrity" "sha512-RQD7hTx14/LY7QoS3tQYO3/fzVtwvZI+JeS5udgsu7FPaEDjlvfK9HBcme9/ipzSPKnrxSgacI9PI7154W62YQ=="
+  "resolved" "https://registry.npmjs.org/penpal/-/penpal-6.2.2.tgz"
+  "version" "6.2.2"
 
 "picocolors@^1.0.0":
   "integrity" "sha512-1fygroTLlHu66zi26VoTDv8yRgm0Fccecssto+MhsZ0D/DGW2sm8E8AjW7NU5VVTRt5GxbeZ5qBuJr+HyLYkjQ=="
