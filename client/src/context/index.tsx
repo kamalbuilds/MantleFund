@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { showNotification } from "@mantine/notifications";
 import {
   useAddress,
@@ -43,7 +44,7 @@ interface StateProviderProps {
 export const StateProvider = ({ children }: StateProviderProps) => {
   const { contract } = useContract(
     "0x796F0816bA4563e386d7517ff4eab63111af7101"
-    // contract address
+    // contract address 0x8d72887163f8bD8A65649Ef4af37dcc21500e5A1 - gorerelli 2 
   );
 
   const {

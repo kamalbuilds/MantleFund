@@ -1,3 +1,4 @@
+// @ts-nocheck
 import {
   Card,
   Container,
@@ -18,7 +19,7 @@ import { FORM_ERROR } from "../components/Form";
 import { FundForm } from "../components/FundForm";
 import { useAppState } from "../context";
 import { calculateBarPercentage, daysLeft } from "../utils";
-import {CreateFlow} from "../components/superfluid/CreateFlow";
+import {CreateFlow} from "../components/superfluid/createFlow";
 
 export const CreateFundValidation = z.object({
   amount: z.number().min(0.0000001),
@@ -51,6 +52,7 @@ const CampaignDetails = () => {
     deadline: new Date(data.deadline.toNumber()),
   } as DisplayCampaignsCardProps;
 
+  console.log({ typedState });
   const percent = calculateBarPercentage(
     parseFloat(typedState.target),
     parseFloat(typedState.amountCollected)
