@@ -18,6 +18,7 @@ import { FORM_ERROR } from "../components/Form";
 import { FundForm } from "../components/FundForm";
 import { useAppState } from "../context";
 import { calculateBarPercentage, daysLeft } from "../utils";
+import {CreateFlow} from "../components/superfluid/CreateFlow";
 
 export const CreateFundValidation = z.object({
   amount: z.number().min(0.0000001),
@@ -171,7 +172,9 @@ const CampaignDetails = () => {
                   }
                 }}
               />
+
             )}
+            <CreateFlow />
           </div>
         </div>
       </div>

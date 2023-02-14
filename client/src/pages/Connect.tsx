@@ -1,5 +1,6 @@
 import { useAccount, useConnect } from "wagmi";
 
+
 export default function Connect() {
   const { connector, address, isConnected } = useAccount();
   const { connect, connectors, error, isLoading, pendingConnector } =
@@ -27,6 +28,7 @@ export default function Connect() {
           </button>
         ))}
       {error && <div>{error.message}</div>}
+      
     </div>
   );
 }

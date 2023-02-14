@@ -7,6 +7,8 @@ import CreateCampaign from "./pages/CreateCampaign";
 import Home from "./pages/Home";
 import Profile from "./pages/Profile";
 import Connect from "./pages/Connect";
+import {CreateFlow} from "./components/superfluid/createFlow";
+
 const App = () => {
   return (
     <div>
@@ -17,6 +19,8 @@ const App = () => {
           <Route path="/create-campaign" element={<CreateCampaign />} />
           <Route path="/campaign-details/:id" element={<CampaignDetails />} />
           <Route path="/Connect" element={<Connect />} />
+          <Route path="/createFlow" element={<CreateFlow />} />
+          // will be updated to manage the flow later 
         </Routes>
       </AppShell>
     </div>

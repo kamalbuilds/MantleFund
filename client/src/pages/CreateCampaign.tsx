@@ -20,7 +20,7 @@ export function CampaignForm<S extends z.ZodType<any, any>>(
               <LabeledTextField
                 name="name"
                 label="Your Name"
-                placeholder="Aman tiwari"
+                placeholder="write your name"
                 required
               />
             </Grid.Col>
@@ -35,8 +35,8 @@ export function CampaignForm<S extends z.ZodType<any, any>>(
             <Grid.Col md={12}>
               <LabeledTextAreaField
                 name="description"
-                label="Story"
-                placeholder="Write your story"
+                label="Information"
+                placeholder="Give some information about your campaign"
                 required
                 minRows={5}
               />
@@ -65,7 +65,7 @@ export function CampaignForm<S extends z.ZodType<any, any>>(
               <LabeledTextField
                 name="image"
                 label="Campaign Image "
-                placeholder="Place image url of your nice campaign"
+                placeholder="Place image url to represent your campaign"
                 required
               />
             </Grid.Col>
@@ -104,7 +104,7 @@ const CreateCampaign = () => {
   }
   return (
     <div>
-      <Title align="center" color="green" order={1}>
+      <Title align="center" color="orange" order={1}>
         Start a Campaign
       </Title>
       <CampaignForm

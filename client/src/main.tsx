@@ -24,7 +24,7 @@ root.render(
         withGlobalStyles
         theme={{
           colorScheme: "dark",
-          primaryColor: "green",
+          primaryColor: "blue",
           defaultGradient: {
             from: "blue",
             to: "green",

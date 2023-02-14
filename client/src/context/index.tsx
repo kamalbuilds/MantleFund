@@ -42,7 +42,7 @@ interface StateProviderProps {
 
 export const StateProvider = ({ children }: StateProviderProps) => {
   const { contract } = useContract(
-    ""
+    "0x796F0816bA4563e386d7517ff4eab63111af7101"
     // contract address
   );
 
@@ -73,7 +73,7 @@ export const StateProvider = ({ children }: StateProviderProps) => {
       showNotification({
         title: "Success",
         message: "Campaign created",
-        color: "green",
+        color: "blue",
       });
 
       return data;
