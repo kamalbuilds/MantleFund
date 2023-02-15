@@ -20,6 +20,7 @@ import { FundForm } from "../components/FundForm";
 import { useAppState } from "../context";
 import { calculateBarPercentage, daysLeft } from "../utils";
 import {CreateFlow} from "../components/superfluid/createFlow";
+import Demonstration from "../components/Demonstration";
 
 export const CreateFundValidation = z.object({
   amount: z.number().min(0.0000001),
@@ -69,6 +70,7 @@ const CampaignDetails = () => {
               alt="Campaign"
             />
 
+            <Demonstration />
             <div className="flex space-x-5 items-center my-5">
               <Progress value={percent} className="w-full" />
 
@@ -176,8 +178,8 @@ const CampaignDetails = () => {
               />
             )}
           </div>
+          <CreateFlow />
         </div>
-        <CreateFlow />
       </div>
     </Container>
   );
