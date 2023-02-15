@@ -1,0 +1,26 @@
+[
+	{
+		"title": "Lisbon in 30 seconds",
+		"thumbnail": "thumbnails/lisbon.jpg",
+		"url": "ipfs://bafybeihwnipdzwsqlizadidvyqvk7t46rz56rfb65wasdhkdukzbisynh4/Lisbon%20in%2030%20seconds%20-%20City%20trip%20feels%20in%20Portugal.mp4",
+		"storageType": "ipfs"
+	},
+	{
+		"title": "Dubai in 30 seconds",
+		"thumbnail": "thumbnails/dubai.jpeg",
+		"url": "ar://0dO1AWy6u8JabFjEHQQBwrT3dEaD_LHm_wYoGP4VSYI",
+		"storageType": "arweave"
+	},
+	{
+		"title": "Paris in 30 seconds",
+		"thumbnail": "thumbnails/paris.jpg",
+		"url": "ar://TShqjXOMwFkoZNlIVxKquOdTL-fkfPdlYDLdxpyZFhQ",
+		"storageType": "arweave"
+	},
+	{
+		"title": "Turkey in 30 seconds",
+		"thumbnail": "thumbnails/turkey.jpg",
+		"url": "ipfs://bafybeieiizudtgmfrarup6otqdskxek2knazn7sgcur5ppqwa6dm7yehnm/Turkey%20in%2030%20seconds.mp4",
+		"storageType": "ipfs"
+	}
+]

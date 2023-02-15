@@ -53,12 +53,60 @@ async function createNewFlow(recipient : string, flowRate: string) {
 
     const result = await createFlowOperation.exec(superSigner);
     console.log(result);
-
+    alert("Congrats - you've just created a money stream!");
     console.log(
       `Congrats - you've just created a money stream!
     `
     );
   } catch (error) {
+    alert("Make sure that the stream does not already exists");
+    console.log(
+      "Hmmm, your transaction threw an error. Make sure that this stream does not already exist, and that you've entered a valid Ethereum address!"
+    );
+    console.error(error);
+  }
+}
+
+async function updateExistingFlow(recipient, flowRate) {
+  const provider = new ethers.providers.Web3Provider(window.ethereum);
+  await provider.send("eth_requestAccounts", []);
+
+  const signer = provider.getSigner();
+
+  const chainId = await window.ethereum.request({ method: "eth_chainId" });
+  const sf = await Framework.create({
+    chainId: Number(chainId),
+    provider: provider
+  });
+
+  const superSigner = sf.createSigner({ signer: signer });
+
+  console.log(signer);
+  console.log(await superSigner.getAddress());
+  const daix = await sf.loadSuperToken("fDAIx");
+
+  console.log(daix);
+
+  try {
+    const updateFlowOperation = daix.updateFlow({
+      sender: await superSigner.getAddress(),
+      receiver: recipient,
+      flowRate: flowRate
+      // userData?: string
+    });
+
+    console.log(updateFlowOperation);
+    console.log("Updating your stream...");
+
+    const result = await updateFlowOperation.exec(superSigner);
+    console.log(result);
+    alert("Congrats - you've just updated a money stream!");
+    console.log(
+      `Congrats - you've just updated a money stream!
+    `
+    );
+  } catch (error) {
+    
     console.log(
       "Hmmm, your transaction threw an error. Make sure that this stream does not already exist, and that you've entered a valid Ethereum address!"
     );
@@ -144,7 +192,15 @@ export const CreateFlow = () => {
 
   function CreateButton({ isLoading, children, ...props }) {
     return (
-      <Button variant="success" className="button" {...props}>
+      <Button variant="success" className="button my-4 text-sky-400/100 p-4 bg-stone-100 w-64 " {...props}>
+        {isButtonLoading ? <Spinner animation="border" /> : children}
+      </Button>
+    );
+  }
+
+  function UpdateButton({ isLoading, children, ...props }) {
+    return (
+      <Button variant="success" className="button p-4 my-4 bg-indigo-500 w-64" {...props}>
         {isButtonLoading ? <Spinner animation="border" /> : children}
       </Button>
     );
@@ -162,35 +218,37 @@ export const CreateFlow = () => {
 
   return (
     <div>
-      <h2 className="text-sky-400/100">Create a Flow</h2>
+      <h2 className="text-sky-400/100 p-4 bg-stone-100 text-center">Create a Flow</h2>
       {currentAccount === "" ? (
-        <button id="connectWallet" className="button" onClick={connectWallet}>
+        <button id="connectWallet" className="button rounded-full p-4" onClick={connectWallet}>
           Connect Wallet
         </button>
       ) : (
-        <Card className="connectedWallet">
+        <Card className="connectedWallet rounded-full my-4 p-4 px-0.5 bg-green-700">
           {`${currentAccount.substring(0, 4)}...${currentAccount.substring(
             38
           )}`}
         </Card>
       )}
       <Form>
-        <FormGroup className="mb-3">
-          <FormControl
-            name="recipient"
-            value={recipient}
-            onChange={handleRecipientChange}
-            placeholder="Enter recipient address"
-          ></FormControl>
-        </FormGroup>
-        <FormGroup className="mb-3">
-          <FormControl
-            name="flowRate"
-            value={flowRate}
-            onChange={handleFlowRateChange}
-            placeholder="Enter a flowRate in wei/second"
-          ></FormControl>
-        </FormGroup>
+        <div className="flex">
+          <FormGroup className="mb-3">
+            <FormControl
+              name="recipient"
+              value={recipient}
+              onChange={handleRecipientChange}
+              placeholder="Enter recipient address"
+            ></FormControl>
+          </FormGroup>
+          <FormGroup className="mb-3 w-32 outline-cyan-500">
+            <FormControl
+              name="flowRate"
+              value={flowRate}
+              onChange={handleFlowRateChange}
+              placeholder="Enter a flowRate in wei/second"
+            ></FormControl>
+          </FormGroup>
+          </div>
         <CreateButton
           onClick={() => {
             setIsButtonLoading(true);
@@ -202,6 +260,17 @@ export const CreateFlow = () => {
         >
           Click to Create Your Stream
         </CreateButton>
+        <UpdateButton
+          onClick={() => {
+            setIsButtonLoading(true);
+            updateExistingFlow(recipient, flowRate);
+            setTimeout(() => {
+              setIsButtonLoading(false);
+            }, 1000);
+          }}
+        >
+          Click to Update Your Stream
+        </UpdateButton>
       </Form>
 
       <div className="description">

@@ -137,7 +137,7 @@ const CampaignDetails = () => {
         </div>
 
         <div>
-          <div>
+          <div className="my-6">
             {!address ? (
               <Text>You need to connect your wallet to fund this campaign</Text>
             ) : (
@@ -174,11 +174,10 @@ const CampaignDetails = () => {
                   }
                 }}
               />
-
             )}
-            <CreateFlow />
           </div>
         </div>
+        <CreateFlow />
       </div>
     </Container>
   );
