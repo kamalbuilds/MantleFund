@@ -5,7 +5,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import videos from "../../constants/sample-data.json";
 
 export default function Home() {
-  const [url, setUrl] = useState("ipfs://bafybeihwnipdzwsqlizadidvyqvk7t46rz56rfb65wasdhkdukzbisynh4/Lisbon%20in%2030%20seconds%20-%20City%20trip%20feels%20in%20Portugal.mp4");
+  const [url, setUrl] = useState("");
   const [title, setTitle] = useState("");
   const [loading, setLoading] = useState(false);
   const [playerRef, setPlayerRef] = useState();
@@ -36,12 +36,10 @@ export default function Home() {
       <Nav />
       <div className="flex flex-col justify-center items-center h-screen font-poppins">
         <h1 className="text-5xl font-bold pb-2 -mt-32 text-slate-900 text-transparent bg-clip-text bg-gradient-to-r from-[#00A660] to-[#28CE88] text-center lg:text-7xl">
-          Livepeer IPFS/Arweave Video Playback
+          Campaign Video 
         </h1>
         <h3 className="text-xl mt-4 text-slate-800 w-[90%] text-center lg:w-[70%]">
-          An demo that illustrates how Livepeer can be used as a video
-          processing and caching layer on top of content available on IPFS or
-          the Arweave gateway for optimized video playback.
+          An Informational video about the campaign
         </h3>
 
         <input

@@ -17,19 +17,19 @@ const myCache = createEmotionCache({
 });
 
 // livepeer
-import {
-  LivepeerConfig,
-  createReactClient,
-  studioProvider,
-} from "@livepeer/react";
+// import {
+//   LivepeerConfig,
+//   createReactClient,
+//   studioProvider,
+// } from "@livepeer/react";
 
 const apiKey = process.env.REACT_APP_LIVEPEER_API_KEY || "";
 console.log({ apiKey });
-const livepeerClient = createReactClient({
-  provider: studioProvider({
-    apiKey
-  }),
-});
+// const livepeerClient = createReactClient({
+//   provider: studioProvider({
+//     apiKey
+//   }),
+// });
 
 root.render(
   <ThirdwebProvider desiredChainId={ChainId.Goerli}>
@@ -50,9 +50,9 @@ root.render(
         <NotificationsProvider position="top-right">
           <Router>
             <StateProvider>
-              <LivepeerConfig client={livepeerClient}>
+              {/* <LivepeerConfig client={livepeerClient}> */}
                 <App />
-              </LivepeerConfig>
+              {/* </LivepeerConfig> */}
             </StateProvider>
           </Router>
         </NotificationsProvider>
