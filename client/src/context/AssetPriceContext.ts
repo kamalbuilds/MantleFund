@@ -17,7 +17,7 @@ export const DEFAULT_CONTEXT: ContextProps = {
 export const AssetPriceContext = createContext<ContextProps>(DEFAULT_CONTEXT)
 
 export const useAssetPrice = (): ContextProps => {
-  const [state, setState] = useState<ContextState>(DEFAULT_CONTEXT)
+  const [state, setState] = useState<ContextProps>(DEFAULT_CONTEXT)
   const updateInterval = useRef<ReturnType<typeof setTimeout>>()
 
   const updateAssetPrice= async () => {
