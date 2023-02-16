@@ -20,7 +20,7 @@ import { FundForm } from "../components/FundForm";
 import { useAppState } from "../context";
 import { calculateBarPercentage, daysLeft } from "../utils";
 import {CreateFlow} from "../components/superfluid/createFlow";
-import Demonstration from "../components/Demonstration";
+import {Demonstration} from "../components/demonstration/Demonstration";
 import { AuthProvider, CHAIN } from '@arcana/auth';
 
 

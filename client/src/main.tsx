@@ -8,8 +8,6 @@ import { NotificationsProvider } from "@mantine/notifications";
 import { StateProvider } from "./context";
 import { wagmiClient } from "./utils/wagmi_client";
 import { WagmiConfig } from "wagmi";
-import { AssetPriceContext, useAssetPrice } from '../src/context/AssetPriceContext';
-import { EthBalance } from '../src/pages/EthBalance';
 
 const root = ReactDOM.createRoot(document.getElementById("root") as Element);
 
