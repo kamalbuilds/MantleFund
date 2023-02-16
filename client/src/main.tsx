@@ -17,21 +17,24 @@ const myCache = createEmotionCache({
 });
 
 // livepeer
-// import {
-//   LivepeerConfig,
-//   createReactClient,
-//   studioProvider,
-// } from "@livepeer/react";
+import {
+  LivepeerConfig,
+  createReactClient,
+  studioProvider,
+} from "@livepeer/react";
 
 const apiKey = process.env.REACT_APP_LIVEPEER_API_KEY || "";
-console.log({ apiKey });
-// const livepeerClient = createReactClient({
-//   provider: studioProvider({
-//     apiKey
-//   }),
-// });
+// console.log({ apiKey });
+const livepeerClient = createReactClient({
+  provider: studioProvider({
+    apiKey
+  }),
+});
+
+
 
 root.render(
+  <LivepeerConfig client={livepeerClient}>
   <ThirdwebProvider desiredChainId={ChainId.Goerli}>
     <WagmiConfig client={wagmiClient}>
       <MantineProvider
@@ -47,16 +50,19 @@ root.render(
           },
         }}
       >
+        
         <NotificationsProvider position="top-right">
           <Router>
             <StateProvider>
-              {/* <LivepeerConfig client={livepeerClient}> */}
+              
                 <App />
-              {/* </LivepeerConfig> */}
+              
             </StateProvider>
           </Router>
         </NotificationsProvider>
+        
       </MantineProvider>
     </WagmiConfig>
   </ThirdwebProvider>
+  </LivepeerConfig>
 );

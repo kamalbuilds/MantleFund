@@ -12,6 +12,7 @@
     "@arcana/auth-wagmi": "^0.0.2",
     "@emotion/react": "^11.10.5",
     "@hookform/resolvers": "^2.9.10",
+    "@livepeer/react": "^2.2.2",
     "@mantine/core": "^5.10.3",
     "@mantine/dates": "^5.10.3",
     "@mantine/hooks": "^5.10.3",
@@ -22,16 +23,15 @@
     "@thirdweb-dev/sdk": "^3",
     "ethers": "^5.7.2",
     "graphql": "^16.6.0",
+    "livepeer": "^2.2.1",
+    "mux-embed": "^4.20.0",
     "react": "^18.2.0",
     "react-bootstrap": "^2.7.2",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.43.0",
     "react-router-dom": "^6.8.0",
     "wagmi": "^0.11.5",
-    "zod": "^3.20.2",
-    "@livepeer/react": "2.0.0-next.8",
-    "livepeer": "^1.4.3",
-    "mux-embed": "^4.15.0"
+    "zod": "^3.20.2"
   },
   "devDependencies": {
     "@types/react": "^18.0.9",
