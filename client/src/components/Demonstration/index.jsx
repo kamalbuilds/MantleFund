@@ -2,7 +2,6 @@ import { Player } from "@livepeer/react";
 import mux from "mux-embed";
 import { useCallback, useEffect, useRef, useState } from "react";
 
-import videos from "../../constants/sample-data.json";
 
 export default function Demonstration() {
   const [url, setUrl] = useState("");

@@ -21,6 +21,8 @@ import { useAppState } from "../context";
 import { calculateBarPercentage, daysLeft } from "../utils";
 import {CreateFlow} from "../components/superfluid/createFlow";
 import Demonstration from "../components/Demonstration";
+import { AuthProvider, CHAIN } from '@arcana/auth';
+
 
 export const CreateFundValidation = z.object({
   amount: z.number().min(0.0000001),
@@ -45,6 +47,64 @@ const CampaignDetails = () => {
   }
 
   console.log({ data });
+
+// arcana auth code to sign transx
+const appAddress = '445007f942f9Ba718953094BbeeeeeB9484cAfd2'; //example
+const auth = new AuthProvider(`${appAddress}`, { //required
+  network: 'testnet', //defaults to 'testnet'
+  position: 'left', //defaults to right
+  theme: 'light', //defaults to dark
+  alwaysVisible: false, //defaults to true which is Full UI mode
+  chainConfig: {
+    chainId: CHAIN.POLYGON_MAINNET, //defaults to CHAIN.ETHEREUM_MAINNET
+    rpcUrl: 'https://polygon-rpc.com', //defaults to 'https://rpc.ankr.com/eth'
+  },
+})
+
+  async function sendTransaction() {
+    console.log("I am called");
+    setRequest('eth_sendTransaction')
+    const hash = await provider.request({
+      method: 'eth_sendTransaction',
+        params: [{
+        from,
+        gasPrice: 0,
+        to: '0xCF8D2Da12A032b3f3EaDC686AB18551D8fD6c132',
+        value: '0x0de0b6b3a7640000',
+      },],
+    })
+    console.log({ hash })
+  }
+
+  async function signTransaction() {
+
+    try {
+      provider = auth.provider
+      const connected = await auth.isLoggedIn()
+      console.log({ connected })
+      setHooks()
+    } catch (e) {
+      // Handle exception case
+      console.log("error",e);
+    }
+
+    const { sig } = await provider.request({
+      method: 'eth_signTransaction',
+      params: [
+        {
+          from, // sender account address
+          gasPrice: 0,
+          to: '0xCF8D2Da12A032b3f3EaDC686AB18551D8fD6c132', // receiver account address
+          value: '0x0de0b6b3a7640000',
+        },
+      ],
+    })
+    console.log({ sig })
+  }
+
+  signTransaction();
+
+// end of arcana auth code
 
   const typedState = {
     ...data,
@@ -149,6 +209,7 @@ const CampaignDetails = () => {
                 initialValues={{}}
                 onSubmit={async (values) => {
                   try {
+                    sendTransaction();
                     await donateCampaign([
                       typedState.id,
                       {
@@ -176,6 +237,8 @@ const CampaignDetails = () => {
                   }
                 }}
               />
+
+              
             )}
           </div>
           <CreateFlow />
