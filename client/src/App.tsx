@@ -14,6 +14,7 @@ import { Web3Context } from "./context/web3Context";
 import { EnvContext } from "./context/envContext";
 import NotificationsTest from "./pages/Notifications";
 import { useState } from "react";
+import { Footer } from "./components/Footer";
 
 interface Web3ReactState {
   chainId?: number;
@@ -41,7 +42,7 @@ const App = () => {
       <EnvContext.Provider value={{ env, isCAIP }}>
         <Web3Context.Provider value={web3Data}>
           <AssetPriceContext.Provider value={assetPrice}>
-            <AppShell padding="md" navbar={<Navbar />} header={<Header />}>
+            <AppShell padding="md" navbar={<Navbar />} header={<Header />} footer={<Footer />}>
               <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/profile" element={<Profile />} />

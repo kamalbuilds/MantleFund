@@ -17,6 +17,8 @@
     "@mantine/dates": "^5.10.3",
     "@mantine/hooks": "^5.10.3",
     "@mantine/notifications": "^5.10.3",
+    "@pushprotocol/restapi": "^0.2.1",
+    "@pushprotocol/uiweb": "^0.2.3",
     "@superfluid-finance/sdk-core": "^0.6.1",
     "@tabler/icons-react": "^2.2.0",
     "@thirdweb-dev/react": "^3",
@@ -31,9 +33,7 @@
     "react-hook-form": "^7.43.0",
     "react-router-dom": "^6.8.0",
     "wagmi": "^0.11.5",
-    "zod": "^3.20.2",
-    "@pushprotocol/uiweb": "^0.0.1",
-    "@pushprotocol/restapi": "^0.3.2"
+    "zod": "^3.20.2"
   },
   "devDependencies": {
     "@types/react": "^18.0.9",

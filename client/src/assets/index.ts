@@ -13,7 +13,7 @@ import money from './money.svg';
 import loader from './loader.svg';
 import thirdweb from './thirdweb.png';
 import notifications from './notifications.svg';
-
+import chainlink from './chainlink.svg';
 
 export {
   tagType,
@@ -31,4 +31,5 @@ export {
   loader,
   thirdweb,
   notifications,
+  chainlink,
 };
