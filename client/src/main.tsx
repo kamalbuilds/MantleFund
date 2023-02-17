@@ -32,11 +32,13 @@ const livepeerClient = createReactClient({
 });
 
 
+const ChainIdMantle = 5001;
 
 root.render(
   <LivepeerConfig client={livepeerClient}>
   <ThirdwebProvider desiredChainId={ChainId.Goerli}>
     <WagmiConfig client={wagmiClient}>
+      
       <MantineProvider
         emotionCache={myCache}
         withGlobalStyles

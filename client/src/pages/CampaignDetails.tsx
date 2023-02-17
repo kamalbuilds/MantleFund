@@ -125,7 +125,7 @@ const auth = new AuthProvider(`${appAddress}`, { //required
         <div>
           <div>
             <img
-              className="rounded-3xl max-w-3xl max-h-[500px ] aspect-video"
+              className="rounded-3xl  h-124 w-124  aspect-video"
               src={typedState.image}
               alt="Campaign"
             />
