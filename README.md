@@ -9,7 +9,8 @@ Campaign owners- Get Notified when a supporter funds your campaign.
 
 For Supporters- Get Notified when there are important updates about the campaigns you are suppoting.
 The stage of improvements going on, NFT drops, Money Stream Informations etc.
-![image](https://user-images.githubusercontent.com/95926324/219756616-54a32e9e-f62e-417f-ba2d-8694b4393390.png)
+
+![image](https://user-images.githubusercontent.com/95926324/219762719-ea46321c-5f5a-4fe2-980e-61f4fba7b59e.png)
 
 # Livepeer Video Explaining about the Campaign to the users inorder to better engage and get support
 
