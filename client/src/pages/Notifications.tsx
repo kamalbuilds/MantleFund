@@ -5,7 +5,7 @@ import { Web3Context } from '../context/web3Context';
 import { EnvContext } from '../context/envContext';
 import { NotificationItem, chainNameType, SubscribedModal } from '@pushprotocol/uiweb';
 import { getCAIPAddress } from '../../src/components/helpers';
-import { Button } from 'react-bootstrap';
+
 import { Section } from '@mantine/core/lib/AppShell/HorizontalSection/Section/Section';
 import '../components/notifications.css';
 
@@ -78,13 +78,15 @@ const NotificationsTest = () => {
   return (
       <div>
             
-            <h2>Here are all the Notifications</h2>
+            <h2 className='text-lg text-sky-400'>Here you will find all the Notifications</h2>
+            
+            <h3>Note For the Campaign owners: You will also get notified when supporters start/update streaming money to your campaigns via the superfluid</h3>
             
                     
             <div className='TabButtons'>
-                <Button onClick={() => { setViewType('notif') }}>Notifications</Button>
-                <Button onClick={() => { setViewType('spam') }}>Spam</Button>
-                <Button onClick={toggleSubscribedModal}>show subscribed modal</Button>
+                <button className="bg-indigo-500 mx-2 rounded p-2 " onClick={() => { setViewType('notif') }}>Notifications</button>
+                <button className="bg-orange-900 mx-2 rounded p-2" onClick={() => { setViewType('spam') }}>Spam</button>
+                <button className="bg-indigo-500 mx-2 rounded p-2" onClick={toggleSubscribedModal}>Push Options</button>
             </div>
 
             
