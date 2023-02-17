@@ -1,0 +1,45 @@
+.NotificationListContainer{
+    margin: 20px;
+    padding: 20px;
+    width: 100%;
+  
+    @media (max-width: 600px) {
+      margin: 0;
+      padding: 0;
+    }
+}
+
+.TabButtons{
+    margin: 20px 0;
+    display: flex;
+    flex-direction: row;
+}
+
+.Header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.ThemeSelector{
+    display: flex;
+    justify-content: flex-end;
+    height: 32px;
+}
+
+.SectionItem{
+    display: flex;
+    gap: 15px;
+    align-items: center;
+  
+}
+
+.Section{
+    border: 2px solid #ccc;
+    padding: 25px;
+    margin: 10px 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 200px;
+}

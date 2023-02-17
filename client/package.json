@@ -17,6 +17,8 @@
     "@mantine/dates": "^5.10.3",
     "@mantine/hooks": "^5.10.3",
     "@mantine/notifications": "^5.10.3",
+    "@pushprotocol/restapi": "^0.2.1",
+    "@pushprotocol/uiweb": "^0.2.3",
     "@superfluid-finance/sdk-core": "^0.6.1",
     "@tabler/icons-react": "^2.2.0",
     "@thirdweb-dev/react": "^3",

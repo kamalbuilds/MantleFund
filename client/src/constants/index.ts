@@ -5,6 +5,8 @@ import {
   payment,
   profile,
   withdraw,
+  notifications,
+  chainlink,
 } from "../assets";
 
 export const navlinks = [
@@ -20,8 +22,13 @@ export const navlinks = [
   },
   {
     name: "analyse",
-    imgUrl: payment,
+    imgUrl: chainlink,
     link: "/ethbalance",
+  },
+  {
+    name: "notifications",
+    imgUrl: notifications,
+    link: "/notifications",
   },
   {
     name: "withdraw",
