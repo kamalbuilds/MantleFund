@@ -8,6 +8,7 @@ import { NotificationsProvider } from "@mantine/notifications";
 import { StateProvider } from "./context";
 import { wagmiClient } from "./utils/wagmi_client";
 import { WagmiConfig } from "wagmi";
+import {MantleTestnet} from "@thirdweb-dev/chains";
 
 const root = ReactDOM.createRoot(document.getElementById("root") as Element);
 
@@ -36,7 +37,7 @@ const ChainIdMantle = 5001;
 
 root.render(
   <LivepeerConfig client={livepeerClient}>
-  <ThirdwebProvider desiredChainId={ChainId.Goerli}>
+  <ThirdwebProvider  activeChain={MantleTestnet}>
     <WagmiConfig client={wagmiClient}>
       
       <MantineProvider
