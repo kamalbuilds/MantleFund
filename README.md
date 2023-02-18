@@ -14,6 +14,27 @@ Claimed MAF NFT - https://explorer.testnet.mantle.xyz/tx/0xf75c673049e83253ca3b4
 Integrating NFTs (Non-Fungible Tokens) in a crowdfunding dapp can provide a new and exciting way for backers to participate and support a project.
 The owner of the campaign can send ERC-1155 NFT's to some of the early supporters of the campaign thereby incentivising the backers to participate with greater zeal.
 
+
+# Livepeer Video Explaining about the Campaign to the users inorder to better engage and get support
+
+![image](https://user-images.githubusercontent.com/95926324/219757049-029fb78e-8843-44b4-b79a-3c253289ddee.png)
+
+# Fund the campaign to support 🚀 
+![image](https://user-images.githubusercontent.com/95926324/219901968-fffec84e-2561-4c02-8a3f-052362aaf56a.png)
+
+# Stream Money for supporting in terms of Tokens DAI/ USDC 
+
+![image](https://user-images.githubusercontent.com/95926324/219885034-6da65b45-c8e7-4397-96e0-b95884a8d405.png)
+
+## We are utilising Money Streams in our dapp - Constant Flow Agreement (CFA): move tokens in constant-rate by-the-second streams between accounts with no capital lock up.
+
+![image](https://user-images.githubusercontent.com/95926324/219885338-0855fb2b-31ef-4dad-b268-15e90a559c9f.png)
+
+
+# Before funding / starting a stream the supporters might want to take a look at the market prices of the tokens that they have (Powered by Chainlink & Quicknode)
+![image](https://user-images.githubusercontent.com/95926324/219902105-5bf0e524-d464-46f8-b9f9-7d874e776e84.png)
+
+
 # Push Notifications and Chat Messaging directly in the dapp
 Campaign owners- Get Notified when a supporter funds your campaign.
 
@@ -24,17 +45,7 @@ The stage of improvements going on, NFT drops, Money Stream Informations etc.
 
 ![image](https://user-images.githubusercontent.com/95926324/219763839-bd57ec8c-98a3-4937-96b3-c4724c8d63e0.png)
 
-# Livepeer Video Explaining about the Campaign to the users inorder to better engage and get support
 
-![image](https://user-images.githubusercontent.com/95926324/219757049-029fb78e-8843-44b4-b79a-3c253289ddee.png)
-
-# Stream Money for supporting in terms of Tokens DAI/ USDC 
-
-![image](https://user-images.githubusercontent.com/95926324/219885034-6da65b45-c8e7-4397-96e0-b95884a8d405.png)
-
-## We are utilising Money Streams in our dapp - Constant Flow Agreement (CFA): move tokens in constant-rate by-the-second streams between accounts with no capital lock up.
-
-![image](https://user-images.githubusercontent.com/95926324/219885338-0855fb2b-31ef-4dad-b268-15e90a559c9f.png)
 
 # Xapp Nested calls using Connext
 
