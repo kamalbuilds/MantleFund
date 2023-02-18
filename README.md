@@ -6,6 +6,9 @@ https://explorer.testnet.mantle.xyz/tx/0x47fe135bd8cb6d1de5f0586d82ba3c9495c34f6
 
 ERC 1155 NFT's - 0x31Fd8c44a1869C48D054d8431Fb8F62C746494EF
 
+Ukraine Supporters NFT - https://explorer.testnet.mantle.xyz/tx/0x1c62dc14e3ae5633aacbac978bbc7a53262acf55e04266a22a78cc0a76e71ebb
+Claimed - https://explorer.testnet.mantle.xyz/tx/0xf75c673049e83253ca3b42da82f90e8029fdd4e6474e490333948b0659f4f8ca
+
 Integrating NFTs (Non-Fungible Tokens) in a crowdfunding dapp can provide a new and exciting way for backers to participate and support a project.
 The owner of the campaign can send ERC-1155 NFT's to some of the early supporters of the campaign thereby incentivising the backers to participate with greater zeal.
 
