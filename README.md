@@ -1,8 +1,13 @@
 # MantleFund
 A Cross-chain Crowdfunding application built on Mantle Blockchain.
 
+Deployed Contract's Address - 0xc17a907d751241d2f1f78802b1cf1f701349986a
+https://explorer.testnet.mantle.xyz/tx/0x47fe135bd8cb6d1de5f0586d82ba3c9495c34f6899d47133ee4ab23c20215e84
+
+ERC 1155 NFT's - 0x31Fd8c44a1869C48D054d8431Fb8F62C746494EF
+
 Integrating NFTs (Non-Fungible Tokens) in a crowdfunding dapp can provide a new and exciting way for backers to participate and support a project.
-The owner of the campaign can send NFT's to some of the early supporters of the campaign thereby incentivising the backers to participate with greater zeal.
+The owner of the campaign can send ERC-1155 NFT's to some of the early supporters of the campaign thereby incentivising the backers to participate with greater zeal.
 
 # Push Notifications and Chat Messaging directly in the dapp
 Campaign owners- Get Notified when a supporter funds your campaign.
