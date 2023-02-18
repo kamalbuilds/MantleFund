@@ -77,7 +77,6 @@ const auth = new AuthProvider(`${appAddress}`, { //required
   }
 
   async function signTransaction() {
-
     try {
       provider = auth.provider
       const connected = await auth.isLoggedIn()
@@ -237,7 +236,7 @@ const auth = new AuthProvider(`${appAddress}`, { //required
                   }
                 }}
               />
-
+              
               
             )}
           </div>

@@ -114,6 +114,54 @@ async function updateExistingFlow(recipient, flowRate) {
   }
 }
 
+// delete a flow 
+async function deleteExistingFlow(recipient) {
+  const provider = new ethers.providers.Web3Provider(window.ethereum);
+  await provider.send("eth_requestAccounts", []);
+
+  const signer = provider.getSigner();
+
+  const chainId = await window.ethereum.request({ method: "eth_chainId" });
+  const sf = await Framework.create({
+    chainId: Number(chainId),
+    provider: provider
+  });
+
+  const superSigner = sf.createSigner({ signer: signer });
+
+  console.log(signer);
+  console.log(await superSigner.getAddress());
+  const daix = await sf.loadSuperToken("fDAIx");
+
+  console.log(daix);
+
+  try {
+    const deleteFlowOperation = daix.deleteFlow({
+      sender: await signer.getAddress(),
+      receiver: recipient
+      // userData?: string
+    });
+
+    console.log(deleteFlowOperation);
+    console.log("Deleting your stream...");
+
+    const result = await deleteFlowOperation.exec(superSigner);
+    console.log(result);
+
+    alert("Thank you, you have successfully deleted a money stream!");
+
+    console.log(
+      `Congrats - you've just deleted a money stream!
+    `
+    );
+  } catch (error) {
+    console.log(
+      "Hmmm, your transaction threw an error. Make sure that this stream does not already exist, and that you've entered a valid Ethereum address!"
+    );
+    console.error(error);
+  }
+}
+
 export const CreateFlow = () => {
   const [recipient, setRecipient] = useState("");
   const [isButtonLoading, setIsButtonLoading] = useState(false);
@@ -192,7 +240,7 @@ export const CreateFlow = () => {
 
   function CreateButton({ isLoading, children, ...props }) {
     return (
-      <Button variant="success" className="button my-4 text-sky-400/100 p-4 bg-stone-100 w-64 " {...props}>
+      <Button variant="success" className="button my-4 text-sky-400/100 p-4 bg-amber-300 w-64 mx-24 " {...props}>
         {isButtonLoading ? <Spinner animation="border" /> : children}
       </Button>
     );
@@ -200,7 +248,15 @@ export const CreateFlow = () => {
 
   function UpdateButton({ isLoading, children, ...props }) {
     return (
-      <Button variant="success" className="button p-4 my-4 bg-indigo-500 w-64" {...props}>
+      <Button variant="success" className="button p-4 my-4 bg-indigo-500 w-64 mx-24" {...props}>
+        {isButtonLoading ? <Spinner animation="border" /> : children}
+      </Button>
+    );
+  }
+
+  function DeleteButton({ isLoading, children, ...props }) {
+    return (
+      <Button variant="success" className="button p-4 my-4 bg-rose-600 w-64 mx-24 text-black" {...props}>
         {isButtonLoading ? <Spinner animation="border" /> : children}
       </Button>
     );
@@ -218,7 +274,7 @@ export const CreateFlow = () => {
 
   return (
     <div>
-      <h2 className="text-sky-400/100 p-4 bg-stone-100 text-center">Create a Flow</h2>
+      <h2 className="text-sky-400/100 p-4 bg-stone-100 text-center">Create a Flow & Update it anytime</h2>
       {currentAccount === "" ? (
         <button id="connectWallet" className="button rounded-full p-4" onClick={connectWallet}>
           Connect Wallet
@@ -238,6 +294,7 @@ export const CreateFlow = () => {
               value={recipient}
               onChange={handleRecipientChange}
               placeholder="Enter recipient address"
+              className="p-2"
             ></FormControl>
           </FormGroup>
           <FormGroup className="mb-3 w-32 outline-cyan-500">
@@ -246,6 +303,7 @@ export const CreateFlow = () => {
               value={flowRate}
               onChange={handleFlowRateChange}
               placeholder="Enter a flowRate in wei/second"
+              className="p-2"
             ></FormControl>
           </FormGroup>
           </div>
@@ -271,6 +329,17 @@ export const CreateFlow = () => {
         >
           Click to Update Your Stream
         </UpdateButton>
+        <DeleteButton
+          onClick={() => {
+            setIsButtonLoading(true);
+            deleteExistingFlow(recipient);
+            setTimeout(() => {
+              setIsButtonLoading(false);
+            }, 1000);
+          }}
+        >
+          Click to Delete Your Stream
+        </DeleteButton>
       </Form>
 
       <div className="description">

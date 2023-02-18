@@ -84,9 +84,9 @@ const NotificationsTest = () => {
             
                     
             <div className='TabButtons'>
-                <button className="bg-indigo-500 mx-2 rounded p-2 " onClick={() => { setViewType('notif') }}>Notifications</button>
-                <button className="bg-orange-900 mx-2 rounded p-2" onClick={() => { setViewType('spam') }}>Spam</button>
-                <button className="bg-indigo-500 mx-2 rounded p-2" onClick={toggleSubscribedModal}>Push Options</button>
+                <button className="bg-cyan-300 mx-2 rounded p-2 text-black" onClick={() => { setViewType('notif') }}>Notifications</button>
+                <button className="bg-yellow-200 mx-2 rounded p-2 text-black" onClick={() => { setViewType('spam') }}>Spam</button>
+                <button className="bg-green-200 mx-2 rounded p-2 text-black" onClick={toggleSubscribedModal}>Push Options</button>
             </div>
 
             
