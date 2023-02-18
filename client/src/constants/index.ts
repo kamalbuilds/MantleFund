@@ -37,12 +37,12 @@ export const navlinks = [
     disabled: true,
   },
   {
-    name: "my campaigns",
+    name: "my camps",
     imgUrl: profile,
     link: "/profile",
   },
   {
-    name: "Arcana",
+    name: "Claim NFTS",
     imgUrl: logout,
     link: "/claim",
   },

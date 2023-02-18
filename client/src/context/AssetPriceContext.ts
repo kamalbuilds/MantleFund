@@ -1,10 +1,15 @@
 import { utils } from 'ethers';
 import { createContext, useEffect, useRef, useState } from 'react';
-import { getLatestPrice } from '../components/getLatestPrice';
+import { getLatestPrice , getLatestPricedai } from '../components/getLatestPrice';
+
 
 interface ContextProps {
   conversionDate: number | null;
   conversionRate: number | null;
+  ethConversionDate: number | null;
+  ethConversionRate: number | null;
+  daiConversionDate: number | null;
+  daiConversionRate: number | null;
 }
 
 const UPDATE_INTERVAL_TIMEOUT = 180000 // 3 minutes
@@ -12,6 +17,10 @@ const UPDATE_INTERVAL_TIMEOUT = 180000 // 3 minutes
 export const DEFAULT_CONTEXT: ContextProps = {
   conversionDate: null,
   conversionRate: null,
+  ethConversionDate: null,
+  ethConversionRate: null,
+  daiConversionDate: null,
+  daiConversionRate: null,
 }
 
 export const AssetPriceContext = createContext<ContextProps>(DEFAULT_CONTEXT)
@@ -20,20 +29,31 @@ export const useAssetPrice = (): ContextProps => {
   const [state, setState] = useState<ContextProps>(DEFAULT_CONTEXT)
   const updateInterval = useRef<ReturnType<typeof setTimeout>>()
 
-  const updateAssetPrice= async () => {
-    let conversionDate = null
-    let conversionRate = null
+  const updateAssetPrice = async () => {
+    let ethConversionDate : any= null
+    let ethConversionRate : any= null
+    let daiConversionDate : any= null
+    let daiConversionRate : any= null
 
     try {
-      const roundData = await getLatestPrice()
+      const ethRoundData = await getLatestPrice()
+      const daiRoundData = await getLatestPricedai()
 
-      conversionDate = Number(roundData[3].toString()) * 1000
-      conversionRate = Number(utils.formatUnits(roundData[1], 8))
+      ethConversionDate = Number(ethRoundData[3].toString()) * 1000
+      ethConversionRate = Number(utils.formatUnits(ethRoundData[1], 8))
+      daiConversionDate = Number(daiRoundData[3].toString()) * 1000
+      daiConversionRate = Number(utils.formatUnits(daiRoundData[1], 18))
     } catch (error) {
-      console.log(error) 
+      console.log(error)
     }
 
-    setState({conversionDate, conversionRate })
+    setState(prevState => ({
+      ...prevState,
+      ethConversionDate,
+      ethConversionRate,
+      daiConversionDate,
+      daiConversionRate
+    }))
   }
 
   const startUpdate = async () => {
@@ -59,3 +79,5 @@ export const useAssetPrice = (): ContextProps => {
 
   return state
 }
+
+
