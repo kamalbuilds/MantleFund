@@ -50,7 +50,7 @@ const App = () => {
                 <Route path="/create-campaign" element={<CreateCampaign />} />
                 <Route path="/campaign-details/:id" element={<CampaignDetails />} />
                 <Route path="/Connect" element={<Connect />} />
-                <Route path="/ethbalance" element={<EthBalance />} />
+                <Route path="/analyse" element={<EthBalance />} />
                 <Route path="/claim" element={<MantleNFT />} />
                 <Route path="/notifications" element={<NotificationsTest />} />
                 {/* will be updated to manage the flow later */}

@@ -14,6 +14,8 @@ import thirdweb from './thirdweb.png';
 import notifications from './notifications.svg';
 import chainlink from './chainlink.svg';
 import ologo from './ologo.svg';
+import eur from './eur.png';
+import btc from './btc.png';
 
 export {
   tagType,
@@ -32,4 +34,6 @@ export {
   notifications,
   chainlink,
   ologo,
+  eur,
+  btc,
 };

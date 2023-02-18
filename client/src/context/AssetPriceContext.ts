@@ -1,6 +1,6 @@
 import { utils } from 'ethers';
 import { createContext, useEffect, useRef, useState } from 'react';
-import { getLatestPrice , getLatestPricedai } from '../components/getLatestPrice';
+import { getLatestPrice , getLatestPricebtc , getLatestPriceeur } from '../components/getLatestPrice';
 
 
 interface ContextProps {
@@ -8,8 +8,10 @@ interface ContextProps {
   conversionRate: number | null;
   ethConversionDate: number | null;
   ethConversionRate: number | null;
-  daiConversionDate: number | null;
-  daiConversionRate: number | null;
+  btcConversionDate: number | null;
+  btcConversionRate: number | null;
+  eurConversionDate: number | null;
+  eurConversionRate: number | null;
 }
 
 const UPDATE_INTERVAL_TIMEOUT = 180000 // 3 minutes
@@ -19,8 +21,10 @@ export const DEFAULT_CONTEXT: ContextProps = {
   conversionRate: null,
   ethConversionDate: null,
   ethConversionRate: null,
-  daiConversionDate: null,
-  daiConversionRate: null,
+  btcConversionDate: null,
+  btcConversionRate: null,
+  eurConversionDate: null,
+  eurConversionRate: null,
 }
 
 export const AssetPriceContext = createContext<ContextProps>(DEFAULT_CONTEXT)
@@ -32,17 +36,22 @@ export const useAssetPrice = (): ContextProps => {
   const updateAssetPrice = async () => {
     let ethConversionDate : any= null
     let ethConversionRate : any= null
-    let daiConversionDate : any= null
-    let daiConversionRate : any= null
+    let btcConversionDate : any= null
+    let btcConversionRate : any= null
+    let eurConversionDate : any= null
+    let eurConversionRate : any= null
 
     try {
       const ethRoundData = await getLatestPrice()
-      const daiRoundData = await getLatestPricedai()
+      const btcRoundData = await getLatestPricebtc()
+      const eurRoundData = await getLatestPriceeur()
 
       ethConversionDate = Number(ethRoundData[3].toString()) * 1000
       ethConversionRate = Number(utils.formatUnits(ethRoundData[1], 8))
-      daiConversionDate = Number(daiRoundData[3].toString()) * 1000
-      daiConversionRate = Number(utils.formatUnits(daiRoundData[1], 18))
+      btcConversionDate = Number(btcRoundData[3].toString()) * 1000
+      btcConversionRate = Number(utils.formatUnits(btcRoundData[1], 18))
+      eurConversionDate = Number(eurRoundData[3].toString()) * 1000
+      eurConversionRate = Number(utils.formatUnits(eurRoundData[1], 8))
     } catch (error) {
       console.log(error)
     }
@@ -51,8 +60,10 @@ export const useAssetPrice = (): ContextProps => {
       ...prevState,
       ethConversionDate,
       ethConversionRate,
-      daiConversionDate,
-      daiConversionRate
+      btcConversionDate,
+      btcConversionRate,
+      eurConversionDate,
+      eurConversionRate,
     }))
   }
 

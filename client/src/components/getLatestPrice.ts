@@ -1,11 +1,12 @@
 import { providers, Contract, BigNumber } from 'ethers'
 import { ethers } from 'ethers';
 
-const provider = new ethers.providers.JsonRpcProvider("https://rpc.ankr.com/eth_sepolia")
-// const provider = new ethers.providers.JsonRpcProvider("https://eth-goerli.g.alchemy.com/v2/vlMYM7SS4B_MuOraw_QHcBGza_ZCS1Nw")
-const addr = '0x9326BFA02ADD2366b30bacB125260Af641031331';
-const ETH_USD_RATE_ADDRESS = "0x694AA1769357215DE4FAC081bf1f309aDC325306";
-// const priceFeed = new Contract(ETH_USD_RATE_ADDRESS, aggregatorV3InterfaceABI, provider)
+const provider = new ethers.providers.JsonRpcProvider("https://sleek-lingering-market.ethereum-goerli.discover.quiknode.pro/3f5cc6bcbbd5bb4ac343e9673d1db6352f917c7f/");
+// using QUICKNODE rpc PROVIDER
+
+const BTC_USD_RATE_ADDRESS = '0xA39434A63A52E749F02807ae27335515BA4b07F7';
+const ETH_USD_RATE_ADDRESS = "0xD4a33860578De61DBAbDc8BFdb98FD742fA7028e";
+const EUR_USD_RATE_ADDRESS = "0x44390589104C9164407A0E0562a9DBe6C24A0E05";
 
 
 const aggregatorV3InterfaceABI = [
@@ -63,9 +64,13 @@ export function getLatestPrice(): Promise<BigNumber[]> {
   return priceFeed.latestRoundData()
 }
 
-const daiusd = "0x14866185B1962B63C3Ea9E03Bc1da838bab34C19";
-
-export function getLatestPricedai(): Promise<BigNumber[]> {
-  const priceFeed = new ethers.Contract(daiusd, aggregatorV3InterfaceABI, provider)
+export function getLatestPricebtc(): Promise<BigNumber[]> {
+  const priceFeed = new ethers.Contract(BTC_USD_RATE_ADDRESS, aggregatorV3InterfaceABI, provider)
 return priceFeed.latestRoundData()
 }
+
+export function getLatestPriceeur(): Promise<BigNumber[]> {
+  const priceFeed = new ethers.Contract(EUR_USD_RATE_ADDRESS, aggregatorV3InterfaceABI, provider)
+return priceFeed.latestRoundData()
+}
+

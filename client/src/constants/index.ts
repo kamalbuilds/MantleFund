@@ -23,7 +23,7 @@ export const navlinks = [
   {
     name: "analyse",
     imgUrl: chainlink,
-    link: "/ethbalance",
+    link: "/analyse",
   },
   {
     name: "notifications",
