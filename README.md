@@ -26,6 +26,13 @@ The stage of improvements going on, NFT drops, Money Stream Informations etc.
 
 ![image](https://user-images.githubusercontent.com/95926324/219757049-029fb78e-8843-44b4-b79a-3c253289ddee.png)
 
+# Stream Money for supporting in terms of Tokens DAI/ USDC 
+
+![image](https://user-images.githubusercontent.com/95926324/219885034-6da65b45-c8e7-4397-96e0-b95884a8d405.png)
+
+![image](https://user-images.githubusercontent.com/95926324/219885338-0855fb2b-31ef-4dad-b268-15e90a559c9f.png)
+
+
 # Xapp Nested calls using Connext
 
 Multiple blockchain support: MantleFund can use nested xcalls to interact with different blockchain networks to facilitate cross-chain transactions. 
