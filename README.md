@@ -30,8 +30,9 @@ The stage of improvements going on, NFT drops, Money Stream Informations etc.
 
 ![image](https://user-images.githubusercontent.com/95926324/219885034-6da65b45-c8e7-4397-96e0-b95884a8d405.png)
 
-![image](https://user-images.githubusercontent.com/95926324/219885338-0855fb2b-31ef-4dad-b268-15e90a559c9f.png)
+## We are utilising Money Streams in our dapp - Constant Flow Agreement (CFA): move tokens in constant-rate by-the-second streams between accounts with no capital lock up.
 
+![image](https://user-images.githubusercontent.com/95926324/219885338-0855fb2b-31ef-4dad-b268-15e90a559c9f.png)
 
 # Xapp Nested calls using Connext
 
