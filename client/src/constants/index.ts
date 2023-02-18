@@ -44,6 +44,11 @@ export const navlinks = [
   {
     name: "Arcana",
     imgUrl: logout,
+    link: "/claim",
+  },
+  {
+    name: "Arcana",
+    imgUrl: logout,
     link: "/Connect",
   },
 ];

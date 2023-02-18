@@ -39,7 +39,7 @@ const DisplayCampaigns = (item: DisplayCampaignsCardProps) => {
     <Grid.Col sm={6} md={4} lg={3}>
       <Card
         onClick={handleCardClick}
-        className="cursor-pointer hover:transform hover:scale-105 transition-all duration-300"
+        className="cursor-pointer hover:transform hover:scale-105 transition-all duration-300 mx-2"
         shadow="sm"
         p="lg"
         radius="md"

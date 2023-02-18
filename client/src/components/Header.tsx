@@ -8,7 +8,7 @@ import {
 import { IconSearch } from "@tabler/icons-react";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { logo, thirdweb } from "../assets";
+import { ologo, thirdweb } from "../assets";
 import { useAppState } from "../context";
 const Header = () => {
   const navigate = useNavigate();
@@ -19,7 +19,7 @@ const Header = () => {
       <div className="flex">
         <div className="flex justify-center w-[170px]">
           <div>
-            <img src={logo} className="h-10 w-auto" />
+            <img src={ologo} className="h-10 w-auto" />
           </div>
         </div>
 

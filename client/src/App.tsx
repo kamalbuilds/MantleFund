@@ -1,4 +1,4 @@
-import { AppShell } from "@mantine/core";
+import { AppShell, MantineProvider } from "@mantine/core";
 import { Route, Routes } from "react-router-dom";
 import Header from "./components/Header";
 import Navbar from "./components/Navbar";
@@ -15,6 +15,7 @@ import { EnvContext } from "./context/envContext";
 import NotificationsTest from "./pages/Notifications";
 import { useState } from "react";
 import { Footer } from "./components/Footer";
+import {MantleNFT} from "./pages/MantleNFT";
 
 interface Web3ReactState {
   chainId?: number;
@@ -50,6 +51,7 @@ const App = () => {
                 <Route path="/campaign-details/:id" element={<CampaignDetails />} />
                 <Route path="/Connect" element={<Connect />} />
                 <Route path="/ethbalance" element={<EthBalance />} />
+                <Route path="/claim" element={<MantleNFT />} />
                 <Route path="/notifications" element={<NotificationsTest />} />
                 {/* will be updated to manage the flow later */}
               </Routes>
