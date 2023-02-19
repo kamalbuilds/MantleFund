@@ -31,19 +31,13 @@ export const navlinks = [
     link: "/notifications",
   },
   {
-    name: "withdraw",
-    imgUrl: withdraw,
-    link: "/",
-    disabled: true,
-  },
-  {
     name: "my camps",
     imgUrl: profile,
     link: "/profile",
   },
   {
     name: "Claim NFTS",
-    imgUrl: logout,
+    imgUrl: withdraw,
     link: "/claim",
   },
   {

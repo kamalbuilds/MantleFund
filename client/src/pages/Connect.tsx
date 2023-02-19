@@ -7,7 +7,7 @@ export default function Connect() {
     useConnect();
 
   return (
-    <div className="main">
+    <button className="main justify-self-center bg-indigo-500 p-6 rounded-full ring-2 ring-blue-500 place-self-center">
       {isConnected && (
         <div className="connected-msg">
           Connected to {connector?.name} with address {address}
@@ -29,6 +29,6 @@ export default function Connect() {
         ))}
       {error && <div>{error.message}</div>}
       
-    </div>
+    </button>
   );
 }

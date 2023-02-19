@@ -273,7 +273,7 @@ export const CreateFlow = () => {
   };
 
   return (
-    <div>
+    <div className="my-20">
       <h2 className="text-sky-400/100 p-4 bg-stone-100 text-center">Create a Flow & Update it anytime</h2>
       {currentAccount === "" ? (
         <button id="connectWallet" className="button rounded-full p-4" onClick={connectWallet}>
