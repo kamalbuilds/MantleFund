@@ -14,4 +14,4 @@ The function creates a call to connext.xcall, which sends the relayerFee to the 
 
 The second contract is called XReciever.sol and is designed to be deployed on the receiving end of the cross-chain communication. It includes an xReceive function which is called by the Fund function on the sending contract via Connext's cross-chain communication protocol. The xReceive function takes in several parameters, including _amount, _asset, _originSender, and _origin. It then decodes the callData and processes the transaction accordingly.
 
-If the xReceive function is successful, it sends a "pong" message back to the XSender contract via a nested xcall with the same relayerFee.
+If the xReceive function is successful, it sends a thankyou or someother message back to the XSender contract via a nested xcall with the same relayerFee.
