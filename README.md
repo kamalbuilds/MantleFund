@@ -16,6 +16,17 @@ Claimed MAF NFT - https://explorer.testnet.mantle.xyz/tx/0xf75c673049e83253ca3b4
 Integrating NFTs (Non-Fungible Tokens) in a crowdfunding dapp can provide a new and exciting way for backers to participate and support a project.
 The owner of the campaign can send ERC-1155 NFT's to some of the early supporters of the campaign thereby incentivising the backers to participate with greater zeal.
 
+# Problems aimed to Solve
+Interoperability: By leveraging different blockchain networks, MantleFund application can facilitate the transfer of funds between different cryptocurrencies, making it easier for users to contribute to projects regardless of the cryptocurrency they hold.
+
+Accessibility: MantleFund can increase accessibility to crowdfunding by allowing users to contribute with different cryptocurrencies, lowering the barriers to entry for those who may not have the same currency as the platform.
+
+Security: Blockchain-based crowdfunding is inherently more secure, as the funds are held in smart contracts that are transparent and tamper-proof. Additionally, the decentralized nature of the blockchain network means that the funds are not held by a centralized authority, reducing the risk of fraud or other malicious activities.
+
+Transparency: Smart contracts on the blockchain provide a high level of transparency, enabling contributors to track the progress of the project and the allocation of funds in real-time. This increases trust and accountability between the project owner and contributors.
+
+Global reach: MantleFund has the potential to reach a global audience, as the platform is not tied to a particular country or jurisdiction, making it easier to raise funds from a diverse pool of contributors around the world.
+
 ## Start a campaign by providing required information or Browse through different campaigns available on the platform
 
 ![image](https://user-images.githubusercontent.com/95926324/219902226-bceca6c7-07f9-400d-821c-bf898e453758.png)
