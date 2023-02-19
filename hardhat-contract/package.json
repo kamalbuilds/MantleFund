@@ -9,6 +9,8 @@
     "hardhat": "^2.10.1"
   },
   "dependencies": {
+    "@connext/smart-contracts": "^0.2.7-alpha.1",
+    "@openzeppelin/contracts": "^4.8.1",
     "@thirdweb-dev/contracts": "^3",
     "dotenv": "^16.0.3"
   }
