@@ -16,6 +16,7 @@ import NotificationsTest from "./pages/Notifications";
 import { useState } from "react";
 import { Footer } from "./components/Footer";
 import {MantleNFT} from "./pages/MantleNFT";
+import { NFTList } from "./components/Nft/DisplayNFT";
 
 interface Web3ReactState {
   chainId?: number;
@@ -53,6 +54,7 @@ const App = () => {
                 <Route path="/analyse" element={<EthBalance />} />
                 <Route path="/claim" element={<MantleNFT />} />
                 <Route path="/notifications" element={<NotificationsTest />} />
+                <Route path="/allnfts" element={<NFTList />} />
                 {/* will be updated to manage the flow later */}
               </Routes>
             </AppShell>.
