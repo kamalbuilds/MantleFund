@@ -1,47 +1,12 @@
-## Getting Started
+A pair of Solidity contracts designed to work with Connext cross-chain communication and payment channels.
 
-Create a project using this example:
+The first contract is XSender.sol and has a function called Fund, which sends funds to another contract on another blockchain using Connext's cross-chain communication protocol. It takes in 3 parameters:
 
-```bash
-npx thirdweb create --contract --template hardhat-javascript-starter
-```
+target - the address of the receiving contract on the other blockchain
+destinationDomain - the ID of the destination blockchain where the receiving contract resides
+relayerFee - the fee offered to relayers for processing this transaction
+The function creates a call to connext.xcall, which sends the relayerFee to the destination blockchain and calls the xReceive function of the IXReceiver interface on the receiving contract with encoded callData. callData is an array of bytes that includes information about the transaction, including msgrecievedback, the address of XSender contract, and relayerFee.
 
-You can start editing the page by modifying `contracts/Contract.sol`.
+The second contract is called XReciever.sol and is designed to be deployed on the receiving end of the cross-chain communication. It includes an xReceive function which is called by the Fund function on the sending contract via Connext's cross-chain communication protocol. The xReceive function takes in several parameters, including _amount, _asset, _originSender, and _origin. It then decodes the callData and processes the transaction accordingly.
 
-To add functionality to your contracts, you can use the `@thirdweb-dev/contracts` package which provides base contracts and extensions to inherit. The package is already installed with this project. Head to our [Contracts Extensions Docs](https://portal.thirdweb.com/contractkit) to learn more.
-
-## Building the project
-
-After any changes to the contract, run:
-
-```bash
-npm run build
-# or
-yarn build
-```
-
-to compile your contracts. This will also detect the [Contracts Extensions Docs](https://portal.thirdweb.com/contractkit) detected on your contract.
-
-## Deploying Contracts
-
-When you're ready to deploy your contracts, just run one of the following command to deploy you're contracts:
-
-```bash
-npm run deploy
-# or
-yarn deploy
-```
-
-## Releasing Contracts
-
-If you want to release a version of your contracts publicly, you can use one of the followings command:
-
-```bash
-npm run release
-# or
-yarn release
-```
-
-## Join our Discord!
-
-For any questions, suggestions, join our discord at [https://discord.gg/thirdweb](https://discord.gg/thirdweb).
+If the xReceive function is successful, it sends a "pong" message back to the XSender contract via a nested xcall with the same relayerFee.

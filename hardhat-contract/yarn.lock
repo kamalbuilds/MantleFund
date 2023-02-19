@@ -777,6 +777,11 @@
   "resolved" "https://registry.npmjs.org/@nomiclabs/hardhat-ethers/-/hardhat-ethers-2.2.2.tgz"
   "version" "2.2.2"
 
+"@openzeppelin/contracts-upgradeable@^4.8.1":
+  "integrity" "sha512-1wTv+20lNiC0R07jyIAbHU7TNHKRwGiTGRfiNnA8jOWjKT98g5OgLpYWOi40Vgpk8SPLA9EvfJAbAeIyVn+7Bw=="
+  "resolved" "https://registry.npmjs.org/@openzeppelin/contracts-upgradeable/-/contracts-upgradeable-4.8.1.tgz"
+  "version" "4.8.1"
+
 "@openzeppelin/contracts-upgradeable@4.7.3":
   "integrity" "sha512-+wuegAMaLcZnLCJIvrVUDzA9z/Wp93f0Dla/4jJvIhijRrPabjQbZe6fWiECLaJyfn5ci9fqf9vTw3xpQOad2A=="
   "resolved" "https://registry.npmjs.org/@openzeppelin/contracts-upgradeable/-/contracts-upgradeable-4.7.3.tgz"

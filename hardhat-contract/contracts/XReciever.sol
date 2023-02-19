@@ -4,7 +4,7 @@ pragma solidity ^0.8.15;
 import {IConnext} from "@connext/smart-contracts/contracts/core/connext/interfaces/IConnext.sol";
 import {IXReceiver} from "@connext/smart-contracts/contracts/core/connext/interfaces/IXReceiver.sol";
 
-interface IPong {
+interface ISender {
   function sendMsg(
     uint32 destinationDomain, 
     address target,
@@ -14,7 +14,6 @@ interface IPong {
 
 /**
  * @title XSender
- * @notice Pong side of a senderPong example.
  */
 contract  XSender is IXReceiver {
   // The Connext contract on this domain
@@ -33,7 +32,7 @@ contract  XSender is IXReceiver {
    * @param target Address of the sender contract on the destination domain.
    * @param relayerFee The fee offered to relayers. 
    */
-  function sendPong(
+  function sendMsg(
     uint32 destinationDomain, 
     address target,
     uint256 relayerFee
