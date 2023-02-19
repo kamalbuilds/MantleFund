@@ -31,9 +31,15 @@ export const navlinks = [
     link: "/notifications",
   },
   {
+    name: "Airdrop",
+    imgUrl: withdraw,
+    link: "/claim",
+    disabled: true
+  },
+  {
     name: "my camps",
     imgUrl: profile,
-    link: "/profile",
+    link: "/profile"
   },
   {
     name: "Claim NFTS",
