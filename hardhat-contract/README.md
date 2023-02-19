@@ -1,3 +1,8 @@
+Contracts can be found at 
+
+https://github.com/legendarykamal/MantleFund/blob/dev/hardhat-contract/contracts/XReciever.sol 
+https://github.com/legendarykamal/MantleFund/blob/dev/hardhat-contract/contracts/XSender.sol
+
 A pair of Solidity contracts designed to work with Connext cross-chain communication and payment channels.
 
 The first contract is XSender.sol and has a function called Fund, which sends funds to another contract on another blockchain using Connext's cross-chain communication protocol. It takes in 3 parameters:
