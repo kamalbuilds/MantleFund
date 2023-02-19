@@ -27,6 +27,7 @@ Transparency: Smart contracts on the blockchain provide a high level of transpar
 
 Global reach: MantleFund has the potential to reach a global audience, as the platform is not tied to a particular country or jurisdiction, making it easier to raise funds from a diverse pool of contributors around the world.
 
+<h1>Features of the platform</h1>
 ## Start a campaign by providing required information or Browse through different campaigns available on the platform
 
 ![image](https://user-images.githubusercontent.com/95926324/219902226-bceca6c7-07f9-400d-821c-bf898e453758.png)
