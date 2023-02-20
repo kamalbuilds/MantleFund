@@ -16,6 +16,8 @@ Claimed MAF NFT - https://explorer.testnet.mantle.xyz/tx/0xf75c673049e83253ca3b4
 Integrating NFTs (Non-Fungible Tokens) in a crowdfunding dapp can provide a new and exciting way for backers to participate and support a project.
 The owner of the campaign can send ERC-1155 NFT's to some of the early supporters of the campaign thereby incentivising the backers to participate with greater zeal.
 
+https://user-images.githubusercontent.com/95926324/220160765-490d46e4-31da-46b9-941a-c74fa64d4aae.mp4
+
 # Problems aimed to Solve
 Interoperability: By leveraging different blockchain networks, MantleFund application can facilitate the transfer of funds between different cryptocurrencies, making it easier for users to contribute to projects regardless of the cryptocurrency they hold.
 
@@ -28,6 +30,7 @@ Transparency: Smart contracts on the blockchain provide a high level of transpar
 Global reach: MantleFund has the potential to reach a global audience, as the platform is not tied to a particular country or jurisdiction, making it easier to raise funds from a diverse pool of contributors around the world.
 
 <h1>Features of the platform</h1>
+
 ## Start a campaign by providing required information or Browse through different campaigns available on the platform
 
 ![image](https://user-images.githubusercontent.com/95926324/219902226-bceca6c7-07f9-400d-821c-bf898e453758.png)
@@ -69,3 +72,5 @@ The stage of improvements going on, NFT drops, Money Stream Informations etc.
 Multiple blockchain support: MantleFund can use nested xcalls to interact with different blockchain networks to facilitate cross-chain transactions. 
 When a user backs a campaign with cryptocurrency, the application can initiate a nested xcall to transfer the funds to the project owner's wallet on a different blockchain network. 
 This can be especially useful if the project owner prefers to receive payments on a specific blockchain network.
+
+More About this explained here-> https://github.com/legendarykamal/MantleFund/tree/dev/hardhat-contract#readme
