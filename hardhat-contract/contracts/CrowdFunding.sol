@@ -18,6 +18,8 @@ contract CrowdFunding {
         uint256[] donations;
     }
 
+    enum SourceId {BAB, REALT}
+
     mapping(bytes32 => Campaign) public campaigns;
     bytes32[] public listCampaignsID;
 
@@ -34,10 +36,14 @@ contract CrowdFunding {
 
     function initialize() public {
         // Initialize other variables...
+
+            uint256[] memory sources = new uint256[](2);
+            sources[0] = uint256(SourceId.BAB);
+            sources[1] = uint256(SourceId.REALT);
         
         // Initialize the Category contract
         categoryContract = new Category();
-        categoryContract.initialize("Category Token", "CAT", "https://example.com/token/", 0xEf1F4f61946E6150cb98000eF43154cEA262A9b7, sourcesArray);
+        categoryContract.initialize("Category Token", "BAB", "https://explorer.testnet.mantle.xyz/address/0x0cE1f283ca59C4F7fE7581DDb94e08eBff17869E", 0xf78249b2D762C86C9699ff9BA74C5dbf9b4c168a, sources);
     }
 
     function createCampaign(
