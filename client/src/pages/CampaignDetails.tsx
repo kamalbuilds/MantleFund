@@ -208,7 +208,12 @@ const auth = new AuthProvider(`${appAddress}`, { //required
                 initialValues={{}}
                 onSubmit={async (values) => {
                   try {
-                    sendTransaction();
+                      showNotification({
+                        title: "Do you have a zkbab token ?",
+                        message: "Ensure you have are zk kyc verified before donating",
+                        color: "green",
+                      });
+
                     await donateCampaign([
                       typedState.id,
                       {
