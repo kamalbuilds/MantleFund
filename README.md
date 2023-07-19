@@ -1,5 +1,5 @@
 # MantleFund
-A Cross-chain Crowdfunding application built on Mantle Blockchain.
+A Cross-chain Crowdfunding application with KYC built on Mantle Blockchain.
 
 <p align="center">
   <img src="https://user-images.githubusercontent.com/95926324/219892186-d51fed8f-aed4-4d2a-954a-c02cb5a05792.png" height="120" width="120" align="center" />
