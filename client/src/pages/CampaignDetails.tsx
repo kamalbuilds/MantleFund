@@ -211,7 +211,7 @@ const auth = new AuthProvider(`${appAddress}`, { //required
                       showNotification({
                         title: "Do you have a zkbab token ?",
                         message: "Ensure you have are zk kyc verified before donating",
-                        color: "green",
+                        color: "yellow",
                       });
 
                     await donateCampaign([

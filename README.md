@@ -5,8 +5,9 @@ A Cross-chain Crowdfunding application built on Mantle Blockchain.
   <img src="https://user-images.githubusercontent.com/95926324/219892186-d51fed8f-aed4-4d2a-954a-c02cb5a05792.png" height="120" width="120" align="center" />
 </p>
 
-Deployed Contract's Address - 0xc17a907d751241d2f1f78802b1cf1f701349986a
-https://explorer.testnet.mantle.xyz/tx/0x47fe135bd8cb6d1de5f0586d82ba3c9495c34f6899d47133ee4ab23c20215e84
+## Deployed Contract Addresses
+
+Crowdfunding- https://explorer.testnet.mantle.xyz/address/0x81205D838Ce0C1dAEF608A7a8aFE08C86659b5b9
 
 Zkkyc Category on Mantle - https://explorer.testnet.mantle.xyz/address/0xEf1F4f61946E6150cb98000eF43154cEA262A9b7
 
