@@ -1,6 +1,9 @@
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.9;
 
+import "./Category.sol";
+
+
 contract CrowdFunding {
     struct Campaign {
         bytes32 id;
@@ -20,11 +23,21 @@ contract CrowdFunding {
 
     uint256 public numberOfCampaigns = 0;
 
+    Category public categoryContract;
+
     function generateUUID() public view returns (bytes32) {
         return
             keccak256(
                 abi.encodePacked(block.timestamp, msg.sender, numberOfCampaigns)
             );
+    }
+
+    function initialize() public {
+        // Initialize other variables...
+        
+        // Initialize the Category contract
+        categoryContract = new Category();
+        categoryContract.initialize("Category Token", "CAT", "https://example.com/token/", 0xEf1F4f61946E6150cb98000eF43154cEA262A9b7, sourcesArray);
     }
 
     function createCampaign(
@@ -63,6 +76,9 @@ contract CrowdFunding {
 
         require(msg.value > 0, "Donation must be greater than 0");
 
+        // Check if the sender possesses the required trait
+        require(categoryContract.exists(msg.sender), "Sender must possess the required trait");
+        
         campaign.donators.push(msg.sender);
         campaign.donations.push(msg.value);
         campaign.amountCollected += msg.value;

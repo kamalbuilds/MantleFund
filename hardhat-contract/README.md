@@ -1,4 +1,6 @@
-Contracts can be found at 
+By incorporating the categoryContract.exists(msg.sender) check in the donateToCampaign function, we ensure that only addresses possessing the required trait, as defined in the "Category" contract, can make donations to the campaign.
+
+Contracts related to Connext can be found at 
 
 https://github.com/legendarykamal/MantleFund/blob/dev/hardhat-contract/contracts/XReciever.sol 
 https://github.com/legendarykamal/MantleFund/blob/dev/hardhat-contract/contracts/XSender.sol
